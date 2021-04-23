@@ -41,6 +41,15 @@
                     </ul>
                 </li>
 
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-write"></i><span> Category List </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="category_list.php">Category List</a></li>
+                        <li><a href="add_category.php">Create Category</a></li>
+                    </ul>
+                </li>
+
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-write"></i><span> Product </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
