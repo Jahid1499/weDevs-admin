@@ -13,6 +13,7 @@ $roles = $role->getRoles();
 <!DOCTYPE html>
 <html>
 <head>
+    <title>All Roles List</title>
 
     <?php
     require_once "includes/_headerLink.php";
@@ -63,7 +64,7 @@ $roles = $role->getRoles();
                         <div class="page-header-title">
                             <h4 class="pull-left page-title">All Role</h4>
                             <ol class="breadcrumb pull-right">
-                                <li><a href="index.php">weDevs</a></li>
+                                <li><a href="index.php">Dashboard</a></li>
                                 <li class="active">Role List</li>
                             </ol>
                             <div class="clearfix"></div>

@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-
+    <title>Add New Role</title>
     <?php
     require_once "includes/_headerLink.php";
     ?>
@@ -56,7 +56,7 @@ session_start();
                         <div class="page-header-title">
                             <h4 class="pull-left page-title">Create Role</h4>
                             <ol class="breadcrumb pull-right">
-                                <li><a href="index.php">weDevs</a></li>
+                                <li><a href="index.php">Dashboard</a></li>
                                 <li class="active">Create Role</li>
                             </ol>
                             <div class="clearfix"></div>

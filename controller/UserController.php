@@ -25,7 +25,7 @@ switch($_POST['action']){
 
       	 		    }
       	 		    else{
-      	 		    	 $_SESSION['message'] = "<div class='alert alert-danger'>Invalid Password!!</div>";
+      	 		    	 $_SESSION['message_success'] = "<div class='alert alert-danger'>Invalid Password!!</div>";
       	 	             header("Location:../login.php");
       	 		    }
       	 }
@@ -41,7 +41,7 @@ switch($_POST['action']){
       header("Location:../login.php");
      break;
 
-   case "save_user": 
+   case "save":
 
        $user->name = $_POST['name'];
        $user->email = $_POST['email'];
@@ -53,28 +53,53 @@ switch($_POST['action']){
        
         if($status)
         	 {
-        	 	$_SESSION['message'] = "<div class='alert alert-success'>Save user successfully!</div>";
+        	 	$_SESSION['message_success'] = "<div class='alert alert-success'>Save user successfully!</div>";
         	 }
         	 else{
-        	 	$_SESSION['message'] = "<div class='alert alert-danger'>Unable to save!</div>";
+        	 	$_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to save!</div>";
         	 }
 
-        	 header("Location:../add_user.php");
+        	 header("Location:../addUser.php");
 
      break;
 
-   case "update_user":
+   case "update":
+       $user->name = $_POST['name'];
+       $user->email = $_POST['email'];
+       $user->phone = $_POST['phone'];
+       $user->user_type = $_POST['user_type'];
+       $user->status = $_POST['status'];
+       $status = $user->update($_POST['id']);
+
+       if($status)
+       {
+           $_SESSION['message_success'] = "<div class='alert alert-success'>Update user successfully!</div>";
+       }
+       else{
+           $_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to Update!</div>";
+       }
+       header("Location:../userList.php");
 
      break;
 
-   case "delete_user":
+   case "delete":
+       $delete = $user->delete($_POST['id']);
+       if($delete)
+       {
+           $_SESSION['message_success'] = "<div class='alert alert-success'>Delete User successfully!</div>";
+       }
+       else{
+           $_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to delete!</div>";
+       }
+       header("Location:../userList.php");
 
 
      break;
 
   default:
 
-  header("Location:../login.php");
+  //header("Location:../login.php");
+        echo "somethig wrong";
 
 }
 

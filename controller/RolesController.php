@@ -49,9 +49,7 @@ switch($_POST['action']){
         break;
 
     case "delete_role":
-
         $delete = $role->delete($_POST['id']);
-
         if($delete)
         {
             $_SESSION['message_success'] = "<div class='alert alert-success'>Delete Role successfully!</div>";
@@ -59,7 +57,6 @@ switch($_POST['action']){
         else{
             $_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to delete!</div>";
         }
-
         header("Location:../roleList.php");
 
 

@@ -12,6 +12,7 @@ $getRole = $role->getRulesById($id);
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Update Role</title>
 
     <?php
     require_once "includes/_headerLink.php";
@@ -60,10 +61,12 @@ $getRole = $role->getRulesById($id);
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="page-header-title">
-                            <h4 class="pull-left page-title">Create Role</h4>
+                            <h4 class="pull-left page-title">Update <b><?=$getRole['name']; ?></b> Role</h4>
+
+
                             <ol class="breadcrumb pull-right">
-                                <li><a href="index.php">weDevs</a></li>
-                                <li class="active">Create Role</li>
+                                <li><a href="roleList.php">All Role</a></li>
+                                <li class="active">Update Role</li>
                             </ol>
                             <div class="clearfix"></div>
                         </div>
@@ -85,7 +88,7 @@ $getRole = $role->getRulesById($id);
                     <!-- Basic example -->
                     <div class="col-md-6">
                         <div class="panel panel-primary">
-                            <div class="panel-heading"><h3 class="panel-title">Create Role</h3></div>
+                            <div class="panel-heading"><h3 class="panel-title">Update Role</h3></div>
                             <div class="panel-body">
                                 <form action="controller/RolesController.php" method="post" role="form">
                                     <div class="form-group">

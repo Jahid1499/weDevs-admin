@@ -1,26 +1,24 @@
-<?php ?>
+<?php
+session_start();
+/*if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
+    header("Location:login.php");
+    exit();
+}*/
+include("dbconnection/dbconnection.php");
+include("model/users.php");
+$user = new Users();
+$getUsers = $user->getUsers();
+
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+
     <title>All User List</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta content="Admin Dashboard" name="description" />
-    <meta content="ThemeDesign" name="author" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <link rel="shortcut icon" href="assets/images/logo_sm.png">
-
-    <!-- DataTables -->
-    <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
-
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <?php
+    require_once "includes/_headerLink.php";
+    ?>
 
 </head>
 
@@ -76,50 +74,81 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Total Subscription</h4>
-                            </div>
-                            <div class="panel-body">
-                                <h3 class=""><b>2568</b></h3>
-                                <p class="text-muted"><b>48%</b> From Last 24 Hours</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php if(isset($_SESSION['message_success'])){ ?>
+                        <?= $_SESSION['message_success']; ?>
+                    <?php }elseif (isset($_SESSION['message_warning'])){?>
+                        <?= $_SESSION['message_warning']; ?>
+                    <?php }
+                    session_unset();
+                    ?>
+                </div>
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Order Status</h4>
-                            </div>
-                            <div class="panel-body">
-                                <h3 class=""><b>3685</b></h3>
-                                <p class="text-muted"><b>15%</b> Orders in Last 10 months</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Unique Visitors</h4>
-                            </div>
-                            <div class="panel-body">
-                                <h3 class=""><b>25487</b></h3>
-                                <p class="text-muted"><b>65%</b> From Last 24 Hours</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" style="margin: 10px;">
+                    <a class="btn btn-info" style="padding: 10px;" href="addUser.php"><i class="fa fa-plus"></i> Add new User</a>
+                </div>
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Monthly Earnings</h4>
-                            </div>
-                            <div class="panel-body">
-                                <h3 class=""><b>$2779.7</b></h3>
-                                <p class="text-muted"><b>31%</b> From Last 1 month</p>
+                <div class="col-sm-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">All User</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table class="table table-striped">
+                                        <thead>
+                                             <tr>
+                                                <th>#SL</th>
+                                                <th>Name</th>
+                                                <th>E-Mail</th>
+                                                <th>Phone</th>
+                                                <th>User Type</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach($getUsers as $key=>$user): ?>
+                                            <tr>
+                                                <td><?= $key+1?></td>
+                                                <td><?php echo $user['name']; ?></td>
+                                                <td><?php echo $user['email']; ?></td>
+                                                <td><?php echo $user['phone']; ?></td>
+                                                <td><?php
+                                                    if($user['user_type']==1){
+                                                        echo "Admin";
+                                                    }else{
+                                                        echo "User";
+                                                    }
+
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <?php
+                                                    if($user['status'] == 1){
+                                                        echo "Active";
+                                                    }else{
+                                                    echo "InActive";
+                                                    }
+
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a href="updateUser.php?id=<?=$user['id'] ?>" class="btn btn-info btn-sm">UPDATE</a>
+
+                                                    <form action="controller/UserController.php" method="post" style="display:inline-block">
+
+                                                        <input type="hidden" name="action" value="delete" />
+                                                        <input type="hidden" name="id" value="<?php echo $user['id']; ?>" />
+                                                        <input class="btn btn-danger" type="submit" name="submit" value="DELETE" class="btn btn-danger btn-sm" onclick="return confirm('Are you conform to delete data')" />
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

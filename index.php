@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <title>Welcome to weDevs</title>
     <?php
         require_once "includes/_headerLink.php";
     ?>

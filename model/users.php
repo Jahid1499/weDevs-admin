@@ -8,8 +8,7 @@ class Users extends Dbconnection{
 	public $password;
 	public $phone;
 	public $status;
-	public $updated_at;
-	private $table_name = "users";
+	private $table_name = "user";
 
 	public function __construct(){
 		parent::__construct();
@@ -25,7 +24,12 @@ class Users extends Dbconnection{
     }
 
 	 public function getUserById($id){
+         $sql = "SELECT * FROM ".$this->table_name." WHERE id=?";
+         $query = $this->db->prepare($sql);
+         $query->execute([$id]);
+         $data = $query->fetch(PDO::FETCH_ASSOC);
 
+         return $data ? $data : [];
 	  }
 
 	  public function getUserByEmail($email){
@@ -49,11 +53,21 @@ class Users extends Dbconnection{
 	}
 
 	public function update($id){
-
+        $sql = "UPDATE ".$this->table_name." SET name=?, email=?, phone=?, user_type=?, status=? WHERE id =?";
+        $query = $this->db->prepare($sql);
+        $update = $query->execute([$this->name, $this->email, $this->phone, $this->user_type, $this->status, $id]);
+        if($update){
+            return true;
+        }else{
+            return false;
+        }
 	}
 
 	public function delete($id){
-
+        $sql = "DELETE FROM ".$this->table_name." WHERE id =?";
+        $query = $this->db->prepare($sql);
+        $query->execute([$id]);
+        return true;
 	}
 }
 
