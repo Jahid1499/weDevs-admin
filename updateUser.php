@@ -174,7 +174,7 @@ $getUser = $user->getUserById($id);
                                     <input type="hidden" name="action" value="update">
                                    <input type="hidden" name="id" value="<?=$getUser['id']?>">
                                     <button type="submit" class="btn btn-success waves-effect waves-light">Update</button>
-                                    <a href="roleList.php" class="btn btn-info waves-effect waves-light">Back</a>
+                                    <a href="userList.php" class="btn btn-info waves-effect waves-light">Back</a>
                                 </form>
                             </div><!-- panel-body -->
                         </div> <!-- panel -->
