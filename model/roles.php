@@ -22,6 +22,12 @@ class Roles extends Dbconnection
     }
 
     public function getRulesById($id){
+        $sql = "SELECT * FROM ".$this->table_name." WHERE id=?";
+        $query = $this->db->prepare($sql);
+        $query->execute([$id]);
+        $data = $query->fetch(PDO::FETCH_ASSOC);
+
+        return $data ? $data : [];
 
     }
 
@@ -38,19 +44,33 @@ class Roles extends Dbconnection
 
     public function save(){
 
-        $sql = "INSERT INTO ".$this->table_name."(name, email, password, phone, user_type, status) VALUES(?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO ".$this->table_name."(name) VALUES(?)";
         $query = $this->db->prepare($sql);
-        $query->execute([$this->name, $this->email, $this->password, $this->phone, $this->user_type, $this->status]);
+        $query->execute([$this->name]);
         return $this->db->lastInsertId();
 
     }
 
     public function update($id){
 
+        //SET `id`=[value-1],`name`=[value-2] WHERE 1
+        $sql = "UPDATE ".$this->table_name." SET name =? WHERE id =?";
+        $query = $this->db->prepare($sql);
+        $update = $query->execute([$this->name, $id]);
+        if($update){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
     public function delete($id){
 
+        $sql = "DELETE FROM ".$this->table_name." WHERE id = (?)";
+        $query = $this->db->prepare($sql);
+        $query->execute([$id]);
+        return true;
     }
 
 }

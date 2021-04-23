@@ -1,4 +1,15 @@
+<?php
+session_start();
+/*if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
+    header("Location:login.php");
+    exit();
+}*/
+include("dbconnection/dbconnection.php");
+include("model/roles.php");
+$role = new Roles();
+$roles = $role->getRoles();
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +71,22 @@
                     </div>
                 </div>
 
-                <div class="col-sm-12">
+                <div class="row">
+                    <?php if(isset($_SESSION['message_success'])){ ?>
+                        <?= $_SESSION['message_success']; ?>
+                    <?php }elseif (isset($_SESSION['message_warning'])){?>
+                        <?= $_SESSION['message_warning']; ?>
+                    <?php }
+                    session_unset();
+                    ?>
+                </div>
+
+
+                <div class="row" style="margin: 10px;">
+                    <a class="btn btn-info" style="padding: 10px;" href="addRole.php"><i class="fa fa-plus"></i> Add new Role</a>
+                </div>
+
+                <div class="col-sm-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">All Role</h3>
@@ -73,17 +99,26 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Name</th>
-                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
+                                        <?php foreach($roles as $key=>$role): ?>
+                                            <tr>
+                                                <td><?= $key+1?></td>
+                                                <td><?php echo $role['name'];?></td>
+                                                <td>
+                                                    <a href="updateRole.php?id=<?=$role['id'] ?>" class="btn btn-info btn-sm">UPDATE</a>
+
+                                                    <form action="controller/RolesController.php" method="post" style="display:inline-block">
+
+                                                        <input type="hidden" name="action" value="delete_role" />
+                                                        <input type="hidden" name="id" value="<?php echo $role['id']; ?>" />
+                                                        <input class="btn btn-danger" type="submit" name="submit" value="DELETE" class="btn btn-danger btn-sm" onclick="return confirm('Are you conform to delete data')" />
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -113,6 +148,7 @@
 <?php
 require_once "includes/_footerLink.php";
 ?>
+
 
 </body>
 </html>
