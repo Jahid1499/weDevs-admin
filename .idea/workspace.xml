@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="992836a7-c853-4f61-98d7-5e07aa0d827b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1rXKMZnJq5MR3BtA0CR6tXwIpId" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\xampp\htdocs\wedev-admin" />
+      <recent name="F:\xampp\htdocs\wedev-admin\model" />
+      <recent name="F:\xampp\htdocs\wedev-admin\controller" />
+      <recent name="F:\xampp\htdocs\wedev-admin\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\xampp\htdocs\wedev-admin" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="992836a7-c853-4f61-98d7-5e07aa0d827b" name="Default Changelist" comment="" />
+      <created>1619116946413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619116946413</updated>
+      <workItem from="1619116947453" duration="5005000" />
+      <workItem from="1619184021701" duration="4876000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="714" y="344" key="#Notifications" timestamp="1619190290205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="344" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1619190290205" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619190390481">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619190390481" />
+    <state x="736" y="432" key="ComposerInitDialogKey" timestamp="1619192570906">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="432" key="ComposerInitDialogKey/0.0.1920.1040@0.0.1920.1040" timestamp="1619192570906" />
+    <state x="772" y="243" key="NewPhpClassDialog" timestamp="1619190421167">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="772" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619190421167" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1619190666693">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619190666693" />
+  </component>
+</project>

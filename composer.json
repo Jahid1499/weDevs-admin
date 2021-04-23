@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "files": [
+      "dbconnection/dbconnection.php",
+      "model/roles.php",
+      "model/users.php",
+      "controller/RolesController.php",
+      "controller/UsersController.php"
+    ]
+  }
+}
