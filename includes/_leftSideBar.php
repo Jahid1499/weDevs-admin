@@ -61,7 +61,7 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> Order </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="tables-basic.html">Order List</a></li>
+                        <li><a href="order_list.php">Order List</a></li>
                     </ul>
                 </li>
 

@@ -11,15 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="992836a7-c853-4f61-98d7-5e07aa0d827b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/add_product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/ProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_list.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/update_product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/OrderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_details.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/RolesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/_leftSideBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/_leftSideBar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roleList.php" beforeDir="false" afterPath="$PROJECT_DIR$/roleList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
       <workItem from="1619203941332" duration="29000" />
       <workItem from="1619204030638" duration="3782000" />
       <workItem from="1619208063442" duration="2509000" />
-      <workItem from="1619280341648" duration="4033000" />
+      <workItem from="1619280341648" duration="11390000" />
     </task>
     <servers />
   </component>
@@ -103,31 +102,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="714" y="344" key="#Notifications" timestamp="1619190290205">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="714" y="344" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1619190290205" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619190390481">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619190390481" />
-    <state x="736" y="432" key="ComposerInitDialogKey" timestamp="1619192570906">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="736" y="432" key="ComposerInitDialogKey/0.0.1920.1040@0.0.1920.1040" timestamp="1619192570906" />
-    <state x="772" y="243" key="NewPhpClassDialog" timestamp="1619190421167">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="772" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619190421167" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1619195021827">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619195021827" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1619204284548">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1619204284548" />
   </component>
 </project>

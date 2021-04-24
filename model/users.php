@@ -28,7 +28,6 @@ class Users extends Dbconnection{
          $query = $this->db->prepare($sql);
          $query->execute([$id]);
          $data = $query->fetch(PDO::FETCH_ASSOC);
-
          return $data ? $data : [];
 	  }
 
