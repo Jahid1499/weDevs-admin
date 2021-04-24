@@ -35,11 +35,11 @@ switch($_POST['action']){
 
             $brand->logo = $brand->uploadLogo($_FILES);
             $update_logo = $brand->update_logo($_POST['id']);
-            @unlink("../uploads/brand/".$_POST['old_logo']);
+            @unlink("../uploads/product/".$_POST['old_logo']);
         }
 
         if($update){
-            $_SESSION['message_success'] = "<div class='alert alert-success'>Update brand successfully!</div>";
+            $_SESSION['message_success'] = "<div class='alert alert-success'>Update product successfully!</div>";
         }
         else{
             $_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to Update!</div>";

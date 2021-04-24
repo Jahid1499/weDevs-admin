@@ -53,8 +53,8 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-write"></i><span> Product </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="form-elements.html">Product List</a></li>
-                        <li><a href="form-validation.html">Create Product</a></li>
+                        <li><a href="product_list.php">Product List</a></li>
+                        <li><a href="add_product.php">Create Product</a></li>
                     </ul>
                 </li>
 
