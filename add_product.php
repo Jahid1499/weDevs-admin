@@ -71,13 +71,9 @@
                         </div>
 
                         <div class="row">
-                            <?php if(isset($_SESSION['message_success'])){ ?>
-                                <?= $_SESSION['message_success']; ?>
-                            <?php }elseif (isset($_SESSION['message_warning'])){?>
-                                <?= $_SESSION['message_warning']; ?>
-                            <?php }
-                            session_unset();
-                            ?>
+                            <?php if(isset($_SESSION['message'])){ ?>
+                                <?= $_SESSION['message']; ?>
+                            <?php } ?>
                         </div>
 
                         <div class="row">
@@ -135,9 +131,9 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Image</label>
+                                            <label class="col-md-2 control-label">Image url</label>
                                             <div class="col-md-10">
-                                                <input type="file" name="image" required>
+                                                <input type="url" name="image" required>
                                             </div>
                                         </div>
 
@@ -192,6 +188,7 @@
         <?php
             require_once "includes/_footerLink.php";
         ?>
+
 
     </body>
 </html>

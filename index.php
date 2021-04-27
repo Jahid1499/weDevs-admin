@@ -1,4 +1,25 @@
+<?php
+session_start();
+if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
+    header("Location:login.php");
+    exit();
+}
+include 'dbconnection/dbconnection.php';
+include 'model/users.php';
+include 'model/order.php';
+include 'model/product.php';
+include 'model/category.php';
 
+$user =  new Users();
+$users = $user->getUsers();
+$order = new Orders();
+$orders = $order->getOrders();
+$product = new Product();
+$products = $product->getProducts();
+$category = new Category();
+$categories = $category->getCategories();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,11 +85,10 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="panel panel-primary text-center">
                             <div class="panel-heading">
-                                <h4 class="panel-title">Total Subscription</h4>
+                                <h4 class="panel-title">Total User</h4>
                             </div>
                             <div class="panel-body">
-                                <h3 class=""><b>2568</b></h3>
-                                <p class="text-muted"><b>48%</b> From Last 24 Hours</p>
+                                <h3 class=""><b><?= count($users)?></b></h3>
                             </div>
                         </div>
                     </div>
@@ -76,11 +96,10 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="panel panel-primary text-center">
                             <div class="panel-heading">
-                                <h4 class="panel-title">Order Status</h4>
+                                <h4 class="panel-title">Total Order</h4>
                             </div>
                             <div class="panel-body">
-                                <h3 class=""><b>3685</b></h3>
-                                <p class="text-muted"><b>15%</b> Orders in Last 10 months</p>
+                                <h3 class=""><b><?= count($orders)?></b></h3>
                             </div>
                         </div>
                     </div>
@@ -88,11 +107,10 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="panel panel-primary text-center">
                             <div class="panel-heading">
-                                <h4 class="panel-title">Unique Visitors</h4>
+                                <h4 class="panel-title">Total Product</h4>
                             </div>
                             <div class="panel-body">
-                                <h3 class=""><b>25487</b></h3>
-                                <p class="text-muted"><b>65%</b> From Last 24 Hours</p>
+                                <h3 class=""><b><?= count($products)?></b></h3>
                             </div>
                         </div>
                     </div>
@@ -100,11 +118,10 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="panel panel-primary text-center">
                             <div class="panel-heading">
-                                <h4 class="panel-title">Monthly Earnings</h4>
+                                <h4 class="panel-title">Total Category</h4>
                             </div>
                             <div class="panel-body">
-                                <h3 class=""><b>$2779.7</b></h3>
-                                <p class="text-muted"><b>31%</b> From Last 1 month</p>
+                                <h3 class=""><b><?= count($categories)?></b></h3>
                             </div>
                         </div>
                     </div>

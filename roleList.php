@@ -1,9 +1,10 @@
 <?php
 session_start();
-/*if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
+if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
     header("Location:login.php");
     exit();
-}*/
+}
+
 include("dbconnection/dbconnection.php");
 include("model/roles.php");
 $role = new Roles();
@@ -73,13 +74,9 @@ $roles = $role->getRoles();
                 </div>
 
                 <div class="row">
-                    <?php if(isset($_SESSION['message_success'])){ ?>
-                        <?= $_SESSION['message_success']; ?>
-                    <?php }elseif (isset($_SESSION['message_warning'])){?>
-                        <?= $_SESSION['message_warning']; ?>
-                    <?php }
-                    session_unset();
-                    ?>
+                    <?php if(isset($_SESSION['message'])){ ?>
+                        <?= $_SESSION['message']; ?>
+                    <?php } ?>
                 </div>
 
 

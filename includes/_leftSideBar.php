@@ -9,11 +9,11 @@
             </div>
             <div class="user-info">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Kenny Rigdon</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><?= $_SESSION['name']; ?></a>
                     <ul class="dropdown-menu">
                         <li><a href="javascript:void(0)"> Profile</a></li>
                         <li class="divider"></li>
-                        <li><a href="javascript:void(0)"> Logout</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
 
@@ -24,7 +24,7 @@
         <div id="sidebar-menu">
             <ul>
                 <li>
-                    <a href="../index.php" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
+                    <a href="index.php" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
                 </li>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-wand"></i> <span> Role </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
@@ -34,7 +34,7 @@
                     </ul>
                 </li>
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-wand"></i> <span> User </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-street-view"></i> <span> User </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="userList.php">User LIst</a></li>
                         <li><a href="icons-ion.html">Add User</a></li>
@@ -51,7 +51,7 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-write"></i><span> Product </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-product-hunt"></i><span> Product </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="product_list.php">Product List</a></li>
                         <li><a href="add_product.php">Create Product</a></li>

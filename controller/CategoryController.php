@@ -1,5 +1,5 @@
 <?php
-session_start();
+ession_start();
 include("../dbconnection/dbconnection.php");
 include("../model/category.php");
 $category = new Category();
@@ -15,10 +15,10 @@ switch($_POST['action']){
 	
 	 if($save)
         	 {
-        	 	$_SESSION['message_success'] = "<div class='alert alert-success'>Save category successfully!</div>";
+        	 	$_SESSION['message'] = "<div class='alert alert-success'>Save category successfully!</div>";
         	 }
         	 else{
-        	 	$_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to save!</div>";
+        	 	$_SESSION['message'] = "<div class='alert alert-danger'>Unable to save!</div>";
         	 }
 
         	 header("Location:../add_category.php");
@@ -34,10 +34,10 @@ switch($_POST['action']){
 	  
 	   if($update)
         	 {
-        	 	$_SESSION['message_success'] = "<div class='alert alert-success'>Update category successfully!</div>";
+        	 	$_SESSION['message'] = "<div class='alert alert-success'>Update category successfully!</div>";
         	 }
         	 else{
-        	 	$_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to Update!</div>";
+        	 	$_SESSION['message'] = "<div class='alert alert-danger'>Unable to Update!</div>";
         	 }
 
         	 header("Location:../update_category.php?id=".$_POST['id']);
@@ -50,10 +50,10 @@ switch($_POST['action']){
 	   
 	 if($status)
         	 {
-        	 	$_SESSION['message_success'] = "<div class='alert alert-success'>Category delete successfully!</div>";
+        	 	$_SESSION['message'] = "<div class='alert alert-success'>Category delete successfully!</div>";
         	 }
         	 else{
-        	 	$_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to delete!</div>";
+        	 	$_SESSION['message'] = "<div class='alert alert-danger'>Unable to delete!</div>";
         	 }
 
         	 header("Location:../category_list.php");
@@ -61,9 +61,7 @@ switch($_POST['action']){
      break;
 
   default:
-
-      echo "some thing wrong";
-  //header("Location:../login.php");
+   header("Location:../login.php");
 
 }
 

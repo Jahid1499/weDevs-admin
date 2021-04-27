@@ -80,13 +80,9 @@ $roles = $role->getRoles();
                 </div>
 
                 <div class="row">
-                    <?php if(isset($_SESSION['message_success'])){ ?>
-                        <?= $_SESSION['message_success']; ?>
-                    <?php }elseif (isset($_SESSION['message_warning'])){?>
-                        <?= $_SESSION['message_warning']; ?>
-                    <?php }
-                    session_unset();
-                    ?>
+                    <?php if(isset($_SESSION['message'])){ ?>
+                        <?= $_SESSION['message']; ?>
+                    <?php } ?>
                 </div>
 
                 <!--Add role from-->
@@ -153,7 +149,7 @@ $roles = $role->getRoles();
                                     <div class="form-group m-b-0">
                                         <div class="col-sm-offset-2 col-sm-9">
                                           <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
-                                          <a href="roleList.php" class="btn btn-info waves-effect waves-light">Back</a>
+                                          <a href="userList.php" class="btn btn-info waves-effect waves-light">Back</a>
                                         </div>
                                     </div>
 

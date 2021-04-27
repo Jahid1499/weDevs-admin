@@ -1,9 +1,9 @@
 <?php
  session_start();
-/*  if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
+  if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
     header("Location:login.php");
     exit();
-  }*/
+  }
   include("dbconnection/dbconnection.php");
   include("model/order.php");
   include("model/users.php");
@@ -99,7 +99,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label">Date</label>
                                                 <div class="col-md-10">
-                                                    <input type="text" class="form-control" value="<?=$getOrder['date']?>" readonly>
+                                                    <input type="text" class="form-control" value="<?=$getOrder['created_at']?>" readonly>
                                                 </div>
                                             </div>
 
@@ -120,13 +120,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label">Payment Status</label>
                                                 <div class="col-md-10">
-                                                    <input type="text" class="form-control" value="<?php
-                                                        if ($getOrder['payment_status'] == 0) {
-                                                            echo "Due";
-                                                        } else if ($getOrder['payment_status'] == 1) {
-                                                            echo "Complete";
-                                                        }
-                                                        ?>
+                                                    <input type="text" class="form-control" value="<?= $getOrder['payment_status']?>
                                                     " readonly>
                                                 </div>
                                             </div>
@@ -136,25 +130,13 @@
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label">Order Status</label>
                                                 <div class="col-md-10">
-                                                    <input type="text" class="form-control" value="<?php
-                                                    if ($getOrder['order_status'] == 0)
-                                                    {
-                                                        echo "Processing ";
-                                                    }else if ($getOrder['order_status'] == 1)
-                                                    {
-                                                        echo "Shipped";
-                                                    }else if ($getOrder['order_status'] == 2)
-                                                    {
-                                                        echo "Delivered";
-                                                    }
-                                                    ?>" readonly>
+                                                    <input type="text" class="form-control" value="<?= $getOrder['order_status']?>" readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label"></label>
                                                 <div class="col-md-10">
-                                                    <a href="order_update.php?id=<?=$getOrder['id'] ?>" class="btn btn-success waves-effect waves-light">Update</a>
-                                                    <!--<a href="update_order.php?id=<?/*=$order['id'] */?>" class="btn btn-success btn-sm">UPDATE</a>-->
+                                                    <a href="order_update.php?id=<?= $getOrder['id'] ?>" class="btn btn-success waves-effect waves-light">Update</a>
                                                     <a href="order_list.php" class="btn btn-info waves-effect waves-light">Back</a>
                                                 </div>
                                             </div>
@@ -183,15 +165,6 @@
         <?php
         require_once "includes/_footerLink.php";
         ?>
-
-        <script>
-
-            /*jQuery(document).ready(function(){
-                $('.wysihtml5').wysihtml5();
-
-            
-            });*/
-        </script>
 
     </body>
 </html>

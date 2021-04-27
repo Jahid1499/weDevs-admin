@@ -16,10 +16,10 @@ switch($_POST['action']){
 
         if($save)
         {
-            $_SESSION['message_success'] = "<div class='alert alert-success'>Save Role successfully!</div>";
+            $_SESSION['message'] = "<div class='alert alert-success'>Save Role successfully!</div>";
         }
         else{
-            $_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to save!</div>";
+            $_SESSION['message'] = "<div class='alert alert-danger'>Unable to save!</div>";
         }
 
         header("Location:../addRole.php");
@@ -31,18 +31,12 @@ switch($_POST['action']){
         $role->name = $_POST['name'];
         $update = $role->update($_POST['id']);
 
-        if(!empty($_FILES['logo']['name'])){
-
-            $brand->logo = $brand->uploadLogo($_FILES);
-            $update_logo = $brand->update_logo($_POST['id']);
-            @unlink("../uploads/product/".$_POST['old_logo']);
-        }
 
         if($update){
-            $_SESSION['message_success'] = "<div class='alert alert-success'>Update product successfully!</div>";
+            $_SESSION['message'] = "<div class='alert alert-success'>Update product successfully!</div>";
         }
         else{
-            $_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to Update!</div>";
+            $_SESSION['message'] = "<div class='alert alert-danger'>Unable to Update!</div>";
         }
         header("Location:../updateRole.php?id=".$_POST['id']);
 
@@ -52,10 +46,10 @@ switch($_POST['action']){
         $delete = $role->delete($_POST['id']);
         if($delete)
         {
-            $_SESSION['message_success'] = "<div class='alert alert-success'>Delete Role successfully!</div>";
+            $_SESSION['message'] = "<div class='alert alert-success'>Delete Role successfully!</div>";
         }
         else{
-            $_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to delete!</div>";
+            $_SESSION['message'] = "<div class='alert alert-danger'>Unable to delete!</div>";
         }
         header("Location:../roleList.php");
 
@@ -64,9 +58,7 @@ switch($_POST['action']){
         break;
 
     default:
-
-        /*header("Location:../login.php");*/
-        echo "some thing wrong";
+        header("Location:../login.php");
 
 }
 

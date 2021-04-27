@@ -1,9 +1,9 @@
 <?php
  session_start();
-/*  if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
+  if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
     header("Location:login.php");
     exit();
-  }*/
+  }
   include("dbconnection/dbconnection.php");
   include("model/category.php");
   include("model/product.php");
@@ -73,13 +73,9 @@
                         </div>
 
                         <div class="row">
-                            <?php if(isset($_SESSION['message_success'])){ ?>
-                                <?= $_SESSION['message_success']; ?>
-                            <?php }elseif (isset($_SESSION['message_warning'])){?>
-                                <?= $_SESSION['message_warning']; ?>
-                            <?php }
-                            session_unset();
-                            ?>
+                            <?php if(isset($_SESSION['message'])){ ?>
+                                <?= $_SESSION['message']; ?>
+                            <?php } ?>
                         </div>
 
                         <div class="row">
@@ -139,9 +135,10 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-2 control-label">Image</label>
+                                                <label class="col-md-2 control-label">Image url</label>
                                                 <div class="col-md-10">
-                                                    <input type="file" name="image" >
+                                                    <input type="url" name="image" value="<?=$getProduct['image']?>" placeholder="Insert image Url">
+                                                    <br>
                                                     <img class="m-t-30" src="<?=$getProduct['image']?>" width="100" alt="">
                                                 </div>
                                             </div>

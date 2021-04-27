@@ -27,8 +27,6 @@ class Product extends DbConnection{
 		
 	}
 
-
-	
 	public function getProductById($id){
 		$sql = "SELECT * FROM ".$this->table_name." WHERE id=?";
 		$query = $this->db->prepare($sql);
@@ -68,17 +66,6 @@ class Product extends DbConnection{
 		
 	}
 
-	public function updateImage($FILES, $oldPath){
-
-        unlink($oldPath);
-
-        $ext = end(explode(".", $FILES['image']['name']));
-        $file_path = "uploads/product/".rand(100,10000).'.'.$ext;
-        move_uploaded_file($FILES['image']['tmp_name'], $file_path);
-
-        return $file_path;
-
-	}
 	
 	public function delete($id){
 		
@@ -88,21 +75,7 @@ class Product extends DbConnection{
 		return $delete ? true : false;
 		
 	}
-	
-	public function uploadImage($FILES){
 
-        $ext = end(explode(".", $FILES['image']['name']));
-        $file_path = "uploads/product/".rand(100,10000).'.'.$ext;
-        /*echo $file_path;
-        exit();*/
-        move_uploaded_file($FILES['image']['tmp_name'], $file_path);
-
-        return $file_path;
-	}
-
-	
 }
-
-
 
 ?>

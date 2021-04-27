@@ -20,3 +20,7 @@
 <script src="assets/pages/dashborad.js"></script>
 
 <script src="assets/js/app.js"></script>
+
+<?php
+unset($_SESSION['message']);
+?>

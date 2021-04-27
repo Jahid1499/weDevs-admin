@@ -19,7 +19,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)"> Profile</a></li>
                                 <li class="divider"></li>
-                                <li><a href="javascript:void(0)"> Logout</a></li>
+                                <li><a href="logout.php"> Logout</a></li>
                             </ul>
                         </li>
                     </ul>

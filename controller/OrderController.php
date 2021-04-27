@@ -18,10 +18,10 @@ switch($_POST['action']){
 
         if($update)
         {
-            $_SESSION['message_success'] = "<div class='alert alert-success'>Update product successfully!</div>";
+            $_SESSION['message'] = "<div class='alert alert-success'>Update Order successfully!</div>";
         }
         else{
-            $_SESSION['message_warning'] = "<div class='alert alert-danger'>Unable to update!</div>";
+            $_SESSION['message'] = "<div class='alert alert-danger'>Unable to update!</div>";
         }
         header("Location:../order_update.php?id=".$_POST['id']);
         break;

@@ -1,9 +1,9 @@
 <?php
  session_start();
-/*  if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
+  if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
     header("Location:login.php");
     exit();
-  }*/
+  }
   include("dbconnection/dbconnection.php");
   include("model/order.php");
 
@@ -69,13 +69,9 @@
                         </div>
 
                         <div class="row">
-                            <?php if(isset($_SESSION['message_success'])){ ?>
-                                <?= $_SESSION['message_success']; ?>
-                            <?php }elseif (isset($_SESSION['message_warning'])){?>
-                                <?= $_SESSION['message_warning']; ?>
-                            <?php }
-                            session_unset();
-                            ?>
+                            <?php if(isset($_SESSION['message'])){ ?>
+                                <?= $_SESSION['message']; ?>
+                            <?php } ?>
                         </div>
 
                         <div class="row">
@@ -89,8 +85,8 @@
                                                 <div class="col-sm-10">
                                                     <select class="form-control" name="payment_status" required>
                                                         <option value="">Select Status</option>
-                                                        <option <?php if($getOrder['payment_status'] == 0) echo "selected"?> value="0">Due</option>
-                                                        <option <?php if($getOrder['payment_status'] == 1) echo "selected"?> value="1">Complete</option>
+                                                        <option <?php if($getOrder['payment_status'] == "Due") echo "selected"?> value="Due">Due</option>
+                                                        <option <?php if($getOrder['payment_status'] == "Done") echo "selected"?> value="Done">Done</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -100,9 +96,9 @@
                                                 <div class="col-sm-10">
                                                     <select class="form-control" name="order_status" required>
                                                         <option value="">Select Status</option>
-                                                        <option <?php if($getOrder['order_status'] == 0) echo "selected"?> value="0">Processing</option>
-                                                        <option <?php if($getOrder['order_status'] == 1) echo "selected"?> value="1">Shipped</option>
-                                                        <option <?php if($getOrder['order_status'] == 2) echo "selected"?> value="2">Delivered</option>
+                                                        <option <?php if($getOrder['order_status'] == "Processing") echo "selected"?> value="Processing">Processing</option>
+                                                        <option <?php if($getOrder['order_status'] == "Shipped") echo "selected"?> value="Shipped">Shipped</option>
+                                                        <option <?php if($getOrder['order_status'] == "Delivered") echo "selected"?> value="2">Delivered</option>
                                                     </select>
                                                 </div>
                                             </div>

@@ -1,9 +1,9 @@
 <?php
  session_start();
- /* if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
+  if(empty($_SESSION['user_id']) && $_SESSION['user_type']==''){
     header("Location:login.php");
     exit();
-  }*/
+  }
  include("dbconnection/dbconnection.php");
  include("model/order.php");
  $order = new Orders();
@@ -73,13 +73,9 @@ $orders = $order->getOrders();
                         </div>
 
                         <div class="row">
-                            <?php if(isset($_SESSION['message_success'])){ ?>
-                                <?= $_SESSION['message_success']; ?>
-                            <?php }elseif (isset($_SESSION['message_warning'])){?>
-                                <?= $_SESSION['message_warning']; ?>
-                            <?php }
-                            session_unset();
-                            ?>
+                            <?php if(isset($_SESSION['message'])){ ?>
+                                <?= $_SESSION['message']; ?>
+                            <?php } ?>
                         </div>
 
                         <div class="row">
@@ -109,40 +105,15 @@ $orders = $order->getOrders();
                                                     <tbody>
                                                         <?php foreach($orders as $key=>$order): ?>
                                                         <tr>
-                                                            <td><?php echo $key + 1; ?></td>
-                                                            <td><?php echo $order['id']; ?></td>
-                                                            <td><?php echo $order['product_id']; ?></td>
-                                                            <td><?php echo $order['user_id']; ?></td>
-                                                            <td>
-                                                                <?php
-                                                                if ($order['payment_status'] == 0)
-                                                                {
-                                                                    echo "Due";
-                                                                }else if ($order['payment_status'] == 1)
-                                                                {
-                                                                    echo "Complete";
-                                                                }
-                                                                ?>
-
-                                                            </td>
-                                                            <td>
-                                                                <?php
-                                                                if ($order['order_status'] == 0)
-                                                                {
-                                                                    echo "Processing ";
-                                                                }else if ($order['order_status'] == 1)
-                                                                {
-                                                                    echo "Shipped";
-                                                                }else if ($order['order_status'] == 2)
-                                                                {
-                                                                    echo "Delivered";
-                                                                }
-                                                                ?>
-                                                            </td>
-
-                                                            <td><?php echo $order['total']; ?></td>
-                                                            <td><?php echo $order['quantity']; ?></td>
-                                                            <td><?php echo $order['date']; ?></td>
+                                                            <td><?= $key + 1; ?></td>
+                                                            <td><?= $order['id']; ?></td>
+                                                            <td><?= $order['product_id']; ?></td>
+                                                            <td><?= $order['user_id']; ?></td>
+                                                            <td><?= $order['payment_status'];?></td>
+                                                            <td><?= $order['order_status'];?></td>
+                                                            <td><?= $order['total']; ?></td>
+                                                            <td><?= $order['quantity']; ?></td>
+                                                            <td><?= $order['created_at']; ?></td>
                                                             <td>
                                                                 <a href="order_details.php?id=<?=$order['id'] ?>" class="btn btn-success btn-sm">Details</a>
                                                                 <a href="order_update.php?id=<?=$order['id'] ?>" class="btn btn-info btn-sm">UPDATE</a>

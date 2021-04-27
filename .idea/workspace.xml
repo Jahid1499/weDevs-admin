@@ -11,14 +11,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="992836a7-c853-4f61-98d7-5e07aa0d827b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order_details.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order_list.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order_update.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/addRole.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/addUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/category_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/RolesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/_footerLink.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/_footerLink.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/_leftSideBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/_leftSideBar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/_navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/order_details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/order_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/order_update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/product_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roleList.php" beforeDir="false" afterPath="$PROJECT_DIR$/roleList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updateRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/updateRole.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updateUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/updateUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/update_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/update_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userList.php" beforeDir="false" afterPath="$PROJECT_DIR$/userList.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +104,11 @@
       <workItem from="1619203941332" duration="29000" />
       <workItem from="1619204030638" duration="3782000" />
       <workItem from="1619208063442" duration="2509000" />
-      <workItem from="1619280341648" duration="11390000" />
+      <workItem from="1619280341648" duration="14716000" />
+      <workItem from="1619357401227" duration="1100000" />
+      <workItem from="1619368148419" duration="3875000" />
+      <workItem from="1619479674235" duration="8023000" />
+      <workItem from="1619530864047" duration="1070000" />
     </task>
     <servers />
   </component>

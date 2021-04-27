@@ -65,13 +65,9 @@ session_start();
                 </div>
 
                 <div class="row">
-                    <?php if(isset($_SESSION['message_success'])){ ?>
-                        <?= $_SESSION['message_success']; ?>
-                    <?php }elseif (isset($_SESSION['message_warning'])){?>
-                        <?= $_SESSION['message_warning']; ?>
-                    <?php }
-                    session_unset();
-                    ?>
+                    <?php if(isset($_SESSION['message'])){ ?>
+                        <?= $_SESSION['message']; ?>
+                    <?php } ?>
                 </div>
 
                 <!--Add role from-->
