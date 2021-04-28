@@ -98,7 +98,7 @@
                                                         <option value="">Select Status</option>
                                                         <option <?php if($getOrder['order_status'] == "Processing") echo "selected"?> value="Processing">Processing</option>
                                                         <option <?php if($getOrder['order_status'] == "Shipped") echo "selected"?> value="Shipped">Shipped</option>
-                                                        <option <?php if($getOrder['order_status'] == "Delivered") echo "selected"?> value="2">Delivered</option>
+                                                        <option <?php if($getOrder['order_status'] == "Delivered") echo "Delivered"?> value="2">Delivered</option>
                                                     </select>
                                                 </div>
                                             </div>
